@@ -31,7 +31,7 @@ const Create = () => {
 
     return (
         <div style={{
-            maxWidth: "600px", margin: "auto", padding: "20px", border: "1px solid #ccc", borderRadius: "5px", backgroundColor: "#f9f9f9"
+            maxWidth: "800px", margin: "auto", padding: "20px", border: "1px solid #ccc", borderRadius: "5px", backGroundColor: "#c9c9c9"
         }} >
             <h1 style={{ textAlign: "center" }}>Add a new Contact</h1>
             <form onSubmit={handleSubmit}>
@@ -51,7 +51,7 @@ const Create = () => {
                     <label htmlFor="phoneNumber" style={{ display: "block", marginBottom: "5px" }}>Phone Number</label>
                     <input id="phoneNumber" type="text" onChange={(e) => setPhoneNumber(e.target.value)} placeholder="Phone Number" style={{ width: "100%", padding: "8px", boxSizing: "border-box" }} />
                 </div>
-                <button type="submit">Add Contact</button>
+                <button type="submit" styles={{ borderRadius: "10%", width: "95%", }}>Add Contact</button>
             </form >
         </div >
     );
