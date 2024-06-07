@@ -1,35 +1,38 @@
-import React from 'react';
+import React, {useEffect, useState} from 'react';
 
-const Create = async (todo) => {
-    console.log("Received todo object:", todo);
+const Create = async () => {
+    const [name, setName] = useState("")
+    const [address, setAddress] = useState("")
+    const [email, setEmail] = useState("")
+    const [phoneNumber, setPhoneNumber] = useState("")
 
-    if (!todo || !todo.label) {
-        console.error("Invalid todo object", todo);
-        return null;
+ useEffect(() => {
+    async function createAgenda() {
+        let response = await fetch("https://playground.4geeks.com/apis/fake/contact/agenda/mandoromero",
+            {
+                method:"POST",
+               headers: {"Content-Type": "application/json"}
+               body{
+               name: name
+               address: address
+               Phone: phone number
+               email: email
+               }
+            }
+        )
+        let data = response.json()
     }
+    createAgenda()
+ }, [])  
 
-    try {
-        const res = await fetch(`https://playground.4geeks.com/todo/todos/mandoromero`, {
-            method: 'POST',
-            headers: {
-                'Content-Type': 'application/json'
-            },
-            body: JSON.stringify({
-                label: todo.label,
-                is_done: false
-            })
-        });
-        const data = await res.json();
-        if (!res.ok) {
-            console.log(data.detail || "Error occurred");
-            return null;
-        }
-        console.log(data);
-        return data;
-    } catch (error) {
-        console.log(error);
-        return null;
-    }
+   
+        
+            
+ return(
+    <div></div>
+ )     
+
+   
 };
 
 export default Create;
